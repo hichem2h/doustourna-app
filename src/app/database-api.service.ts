@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class DatabaseApiService {
 
-  baseURL = 'http://doustourna-api.herokuapp.com/api/';
+  baseURL = 'https://doustourna-api.herokuapp.com/api/';
 
   constructor(private store: Store<State>, private router: Router, public http: HttpClient) { }
 

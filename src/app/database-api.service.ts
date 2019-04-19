@@ -16,29 +16,34 @@ export class DatabaseApiService {
 
   constructor(private store: Store<State>, private router: Router, public http: HttpClient) { }
 
+  sendQuest(item: { email: string; name: string; profession: string; question: string; }): Observable<any> {
+
+    return this.http.post(this.baseURL + 'questions/', item);
+  }
+
   loadChapters(): any {
 
     this.http.get(this.baseURL + 'chapters/').subscribe(val => {
 
       this.store.dispatch(new chapters(<chapter[]>val));
 
-    })
+    });
     console.log('load Chapters called');
-    this.store.select('doustour').subscribe(val => console.log(val))
+    this.store.select('doustour').subscribe(val => console.log(val));
   }
 
   navigateHome() {
 
     this.router.navigate(['home']);
   }
-  
+
   loadArticle(number: string): Observable<article> {
 
     return this.http.get<article>(this.baseURL + 'articles/' + number);
   }
 
   loadQuestions(): Observable<any> {
-    return this.http.get(this.baseURL + "questions");
+    return this.http.get(this.baseURL + 'questions');
   }
 
 }

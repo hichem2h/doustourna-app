@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
@@ -29,6 +30,7 @@ import { getDataToStore } from './resolve.chapters';
     CommonModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     StoreModule.forRoot(reducers)
   ],
   providers: [DatabaseApiService,getDataToStore],

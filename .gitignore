@@ -36,3 +36,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+package-lock.json
+dist/versionInit/3rdpartylicenses.txt
+dist/versionInit/styles.cc9bc6f1c7b3b4a92444.css
